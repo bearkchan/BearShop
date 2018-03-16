@@ -2,6 +2,7 @@ package com.bearkchan.service;
 
 import com.bearkchan.dao.ProductDao;
 import com.bearkchan.domain.Category;
+import com.bearkchan.domain.Order;
 import com.bearkchan.domain.PageBean;
 import com.bearkchan.domain.Product;
 

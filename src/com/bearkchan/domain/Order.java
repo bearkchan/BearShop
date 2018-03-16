@@ -21,6 +21,14 @@ public class Order {
     // 该订单中有多少订单项
     List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
     public String getOid() {
         return oid;
     }

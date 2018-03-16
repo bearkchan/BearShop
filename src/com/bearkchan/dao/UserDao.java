@@ -3,6 +3,7 @@ package com.bearkchan.dao;
 import com.bearkchan.domain.User;
 import com.bearkchan.utils.DataSourceUtils;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.taglibs.standard.tag.common.sql.DataSourceUtil;
 
@@ -29,5 +30,12 @@ public class UserDao {
         String sql = "select count(*) from user where username=?";
         Long query = (Long)runner.query(sql, new ScalarHandler(), username);
         return query;
+    }
+
+    //用户登录的方法
+    public User login(String username, String password) throws SQLException {
+        QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+        String sql = "select * from user where username=? and password=?";
+        return runner.query(sql, new BeanHandler<User>(User.class), username,password);
     }
 }

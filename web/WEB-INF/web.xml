@@ -6,9 +6,23 @@
     <welcome-file-list>
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
-
-
-
+    <filter>
+        <filter-name>AutoLoginFilter</filter-name>
+        <filter-class>com.bearkchan.web.filter.AutoLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutoLoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 用防护登录权限配置在自动登录的后面 -->
+    <!-- <filter>
+        <filter-name>UserLoginPrivilegeFilter</filter-name>
+        <filter-class>com.itheima.web.filter.UserLoginPrivilegeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UserLoginPrivilegeFilter</filter-name>
+        <url-pattern>/privilege/*</url-pattern>
+    </filter-mapping> -->
 
 
 </web-app>

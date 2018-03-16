@@ -115,8 +115,8 @@
             </div>
             <div style="text-align:right;margin-top:10px;margin-bottom:10px;">
                 <a href="javascript:void(0);" id="clear" class="clear" onclick="clearCart()">清空购物车</a>
-                <a href="order_info.htm">
-                    <input type="submit" width="100" value="提交订单" name="submit" border="0" style="background: url('./images/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+                <a href="${pageContext.request.contextPath}/order?method=submitOrder">
+                    <input type="button" width="100" value="提交订单" name="submit" border="0" style="background: url('./images/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 						height:35px;width:100px;color:white;">
                 </a>
             </div>

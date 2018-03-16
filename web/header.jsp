@@ -6,17 +6,24 @@
 <!-- 登录 注册 购物车... -->
 <div class="container-fluid">
     <div class="col-md-4">
-        <img src="img/logo2.png"/>
+        <img src="img/logo3.png"/>
     </div>
     <div class="col-md-5">
         <img src="img/header.png"/>
     </div>
     <div class="col-md-3" style="padding-top:20px">
         <ol class="list-inline">
-            <li><a href="login.jsp">登录</a></li>
-            <li><a href="register.jsp">注册</a></li>
+            <c:if test="${empty user }">
+                <li><a href="login.jsp">登录</a></li>
+                <li><a href="register.jsp">注册</a></li>
+            </c:if>
+            <c:if test="${!empty user }">
+                <li style="color:red">欢迎您，${user.username }</li>
+                <li><a href="${pageContext.request.contextPath}/user?method=logout">退出</a> </li>
+            </c:if>
             <li><a href="cart.jsp">购物车</a></li>
-            <li><a href="order_list.jsp">我的订单</a></li>
+            <li><a href="${pageContext.request.contextPath}/order?method=myOrders">我的订单</a></li>
+            <li><a href="order_list.jsp">我的店铺</a></li>
         </ol>
     </div>
 </div>

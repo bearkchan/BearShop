@@ -33,4 +33,10 @@ public class UserService {
         }
         return isExists > 0 ? true : false;
     }
+
+    //用户登录的方法
+    public User login(String username, String password) throws SQLException {
+        UserDao dao = new UserDao();
+        return dao.login(username,password);
+    }
 }
